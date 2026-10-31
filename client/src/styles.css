@@ -1,0 +1,58 @@
+.insights-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  margin-top: 28px;
+}
+.insight-card {
+  padding: 17px;
+  border: 1px solid #e4ebf3;
+  border-radius: 11px;
+  background: #fff;
+}
+.insight-heading { display: flex; align-items: center; gap: 10px; }
+.insight-heading small, .insight-heading strong { display: block; }
+.insight-heading small { color: #75869b; font-size: 10px; }
+.insight-heading strong { margin-top: 4px; font-size: 18px; }
+.progress { height: 5px; margin-top: 17px; overflow: hidden; border-radius: 5px; background: #e9f4ed; }
+.progress i { display: block; height: 100%; border-radius: 5px; background: #27a473; }
+.orange-progress { background: #fff0e4; }
+.orange-progress i { background: #e39847; }
+.insight-note { display: block; margin-top: 8px; color: #9aa9b8; font-size: 9px; }
+.payment-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 650px;
+  margin-bottom: 20px;
+}
+.payment-services button {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 0 10px;
+  align-items: center;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #e4ebf3;
+  border-radius: 10px;
+  background: #fff;
+}
+.service-icon {
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  color: #1769e0;
+  border-radius: 9px;
+  background: #eaf3ff;
+  font-size: 18px;
+}
+.payment-services strong { font-size: 11px; }
+.payment-services small { margin-top: 4px; color: #75869b; font-size: 9px; }
+.password-field { position: relative; }
+.password-field input { padding-right: 58px !important; }
+.password-toggle { position: absolute; right: 9px; bottom: 8px; padding: 3px; color: #1769e0; background: transparent; font-size: 10px; font-weight: 700; }
+@media (max-width: 760px) {
+  .insights-row, .payment-services { grid-template-columns: 1fr; }
+}

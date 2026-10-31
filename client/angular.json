@@ -14,7 +14,8 @@
             "outputPath": "dist/banking-platform-client",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "styles": ["src/styles.css"]
           }
         },
         "serve": {

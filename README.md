@@ -20,7 +20,7 @@ npm install
 npm start
 ```
 
-The API development profile runs at `http://localhost:5179`; the Angular proxy forwards `/api` and `/health` to that address.
+The API development profile runs at `http://localhost:5000`; the Angular proxy forwards `/api` and `/health` to that address.
 
 ## Run infrastructure
 
@@ -38,3 +38,11 @@ SQL Server, RabbitMQ, and Redis are included in the compose topology. The API cu
 - Review account transactions
 - Submit loan applications
 - Retrieve notifications and customer statements
+- Review income, outgoing transfers, and financial health insights
+- Use the Payments workspace for utility, rent, and family payment flows
+
+## Security
+
+API business endpoints require a bearer token returned by registration/login. Passwords are PBKDF2-hashed, sessions expire after 30 minutes, CORS is restricted to local Angular development origins, and account ownership is checked server-side for every read and money movement.
+
+The current store is intentionally in-memory for development. Use a transactional SQL Server ledger and a shared session/token provider before production deployment.
