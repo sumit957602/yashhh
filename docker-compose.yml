@@ -1,0 +1,32 @@
+services:
+  banking-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Banking: Server=sqlserver,1433;Database=Banking;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+      RabbitMq__Host: rabbitmq
+      Redis__Connection: redis:6379
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+      - rabbitmq
+      - redis
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
+    ports:
+      - "1433:1433"
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

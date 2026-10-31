@@ -1,0 +1,36 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# Visual Studio and VS Code user state
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.user
+*.suo
+
+# Angular and Node dependencies/build output
+**/node_modules/
+**/dist/
+**/.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.Local.json
+
+# Test and coverage output
+**/TestResults/
+**/coverage/
+*.trx
+
+# OS files
+.DS_Store
+Thumbs.db
